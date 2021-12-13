@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog'
+
+@Component({
+  selector: 'app-confirm-dialog',
+  templateUrl: './confirm-dialog.component.html',
+  styleUrls: ['./confirm-dialog.component.css']
+})
+export class ConfirmDialogComponent implements OnInit {
+
+  constructor( public dialoRef: MatDialogRef<ConfirmDialogComponent>
+    ) { }
+
+  ngOnInit(): void {
+  }
+
+  onEliminar(){
+    this.dialoRef.close(true);
+  }
+
+  onCancelar(){
+    this.dialoRef.close(false);
+  }
+
+}
